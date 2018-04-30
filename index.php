@@ -20,37 +20,37 @@ $categories = ['Доски и лыжи', 'Крепления', 'Ботинки',
 $adverts = [
   [
     'name' => '2014 Rossignol District Snowboard',
-    'category' => 'Доски и лыжи',
+    'category' => $categories[0],
     'price' => 10999,
     'url' => 'img/lot-1.jpg'
   ],
   [
     'name' => 'DC Ply Mens 2016/2017 Snowboard',
-    'category' => 'Доски и лыжи',
+    'category' => $categories[0],
     'price' => 159999,
     'url' => 'img/lot-2.jpg'
   ],
   [
     'name' => 'Крепления Union Contact Pro 2015 года размер L/XL',
-    'category' => 'Крепления',
+    'category' => $categories[1],
     'price' => 8000,
     'url' => 'img/lot-3.jpg'
   ],
   [
     'name' => 'Ботинки для сноуборда DC Mutiny Charocal',
-    'category' => 'Ботинки',
+    'category' => $categories[2],
     'price' => 10999,
     'url' => 'img/lot-4.jpg'
   ],
   [
     'name' => 'Куртка для сноуборда DC Mutiny Charocal',
-    'category' => 'Одежда',
+    'category' => $categories[3],
     'price' => 7500,
     'url' => 'img/lot-5.jpg'
   ],
   [
     'name' => 'Маска Oakley Canopy',
-    'category' => 'Разное',
+    'category' => $categories[4],
     'price' => 5400,
     'url' => 'img/lot-6.jpg'
   ]
@@ -63,10 +63,12 @@ $adverts = [
  * @return string
  */
 function format_price($num) {
-  if (ceil($num) < 1000) {
-    return ceil($num);
+  $ceiled = ceil($num);
+
+  if ($ceiled < 1000) {
+    return $ceiled;
   } else {
-    $format_num = str_replace(',', ' ', number_format(ceil($num)));
+    $format_num = str_replace(',', ' ', number_format($ceiled));
     return  $format_num . '<b class="rub">р</b>';
   }
 }
