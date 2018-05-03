@@ -31,7 +31,7 @@
 
     <?php foreach ($adverts as $advert): ?>
 
-      <?= render_template('templates/lot.php', ['advert' => $advert]); ?>
+      <?= render_template('templates/lot.php', ['advert' => $advert]) ?>
 
     <?php endforeach; ?>
 

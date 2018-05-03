@@ -56,3 +56,18 @@ function esc($str, $html_special = true) {
 
   return $text;
 }
+
+/**
+ * Функция для вычисления оставшегося времени до полуночи
+ *
+ * @return string
+ */
+function times_left() {
+  date_default_timezone_set('Europe/Moscow');
+
+  $current_date_ts = time();
+  $tomorrow_date_ts = strtotime('tomorrow');
+  $delta_s = $tomorrow_date_ts - $current_date_ts;
+
+  return floor($delta_s);
+}

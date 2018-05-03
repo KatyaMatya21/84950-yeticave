@@ -60,7 +60,7 @@
 
       <?php foreach ($categories as $category): ?>
 
-        <?= render_template('templates/nav-item.php', ['category' => $category]); ?>
+        <?= render_template('templates/nav-item.php', ['category' => $category]) ?>
 
       <?php endforeach; ?>
 
