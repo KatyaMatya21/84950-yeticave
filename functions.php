@@ -7,14 +7,17 @@
  * @return string
  */
 function format_price($num) {
+  $result = '';
   $ceiled = ceil($num);
 
   if ($ceiled < 1000) {
-    return $ceiled;
+    $result = $ceiled;
   } else {
     $format_num = str_replace(',', ' ', number_format($ceiled));
-    return  $format_num . '<b class="rub">р</b>';
+    $result = $format_num . '<b class="rub">р</b>';
   }
+
+  return $result;
 }
 
 /**
