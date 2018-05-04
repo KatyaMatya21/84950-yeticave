@@ -11,7 +11,7 @@
         <span class="lot__cost"><?= format_price($advert['price']) ?></span>
       </div>
       <div class="lot__timer timer">
-        <?= date('h:i', times_left()) ?>
+        <?= times_left() ?>
       </div>
     </div>
   </div>

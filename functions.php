@@ -58,7 +58,7 @@ function esc($str, $html_special = true) {
 }
 
 /**
- * Функция для вычисления оставшегося времени до полуночи
+ * Функция для вычисления и вывода оставшегося времени до полуночи
  *
  * @return string
  */
@@ -69,5 +69,8 @@ function times_left() {
   $tomorrow_date_ts = strtotime('tomorrow');
   $delta_s = $tomorrow_date_ts - $current_date_ts;
 
-  return floor($delta_s);
+  $delta_m = floor($delta_s % 3600 / 60);
+  $delta_h = floor($delta_s / 3600);
+
+  return $delta_h . ':' . $delta_m;
 }
